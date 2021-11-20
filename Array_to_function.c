@@ -26,7 +26,7 @@ int main(){
 	smallest = find_small(num,n);
 	
 	// Display smallest number of array.
-	printf("\n The samllest number in the array is = %d", smallest);
+	printf("\n The smallest number in the array is = %d", smallest);
 	free(num);
 	getch();
 	return 0;
