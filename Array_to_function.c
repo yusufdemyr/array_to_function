@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 // Initialize functions
-void read_array(int**,int n);
-int find_small(int**, int n);
+void read_array(int*,int n);
+int find_small(int*, int n);
 
 int main(){
 	
@@ -20,18 +20,19 @@ int main(){
 	num = (int*)malloc(n*sizeof(int));
 	
 	// Append value to array
-	read_array(&num,n);
+	read_array(num,n);
 	
 	// Find smallest number in array
-	smallest = find_small(&num,n);
+	smallest = find_small(num,n);
 	
 	// Display smallest number of array.
 	printf("\n The samllest number in the array is = %d", smallest);
+	free(num);
 	getch();
 	return 0;
 }
 
-void read_array(int **arr, int n){
+void read_array(int *arr, int n){
 	int i;
 	for(i = 0; i < n; i++){
 		printf("\n arr[%d] = ",i);
@@ -40,12 +41,12 @@ void read_array(int **arr, int n){
 	}
 }
 
-int find_small(int **arr,int n){
+int find_small(int *arr,int n){
 	
-	int i = 0, small = *arr[0];
+	int i = 0, small = arr[0];
 	// Go through the array until you find the smallest value
 	for(i = 1; i < n; i++){
-		if(*arr[i]<small) small = *arr[i];
+		if(arr[i]<small) small = arr[i];
 		// When found make small variable equals to smallest number
 	}
 	return small;
