@@ -37,16 +37,16 @@ void read_array(int *arr, int n){
 	for(i = 0; i < n; i++){
 		printf("\n arr[%d] = ",i);
 		// Append element of arr[i]
-		scanf("%d",&arr[i]);
+		scanf("%d",(arr+i));
 	}
 }
 
 int find_small(int *arr,int n){
 	
-	int i = 0, small = arr[0];
+	int i = 0, small = *(arr + 0);
 	// Go through the array until you find the smallest value
 	for(i = 1; i < n; i++){
-		if(arr[i]<small) small = arr[i];
+		if(arr[i]<small) small = *(arr + i);
 		// When found make small variable equals to smallest number
 	}
 	return small;
